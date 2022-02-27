@@ -5,7 +5,7 @@ api_link=`api.openweathermap.org/data/2.5/weather?q=London&appid=${api_key}`
 // const cityName = document.getElementById('cityName');
 async function getWeather(city,unit){
   displaycityName.innerHTML='loading...'
-  const response = await fetch(`http://api.openweathermap.org/data/2.5/weather?q=${city}&appid=0f4cfc1673ca8fbe1c82881b21b24159`, {mode: 'cors'})
+  const response = await fetch(`https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=0f4cfc1673ca8fbe1c82881b21b24159`, {mode: 'cors'})
   const tempData = await response.json().then(response=>{
     if(response.cod===200){
     console.log(response)
@@ -20,7 +20,7 @@ async function getWeather(city,unit){
 function setVariable(Weather,unit){
   let location =Weather.name
   let weather_description=Weather.weather[0].description
-  let weather_icon=`http://openweathermap.org/img/wn/${Weather.weather[0].icon}@2x.png`
+  let weather_icon=`https://openweathermap.org/img/wn/${Weather.weather[0].icon}@2x.png`
   let country = Weather.sys.country
   let sun_rise = Weather.sys.sun_rise
   let sun_set = Weather.sys.sunset
