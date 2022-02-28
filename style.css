@@ -2,9 +2,6 @@ body{
     height: 100vh;
     padding: 0;
     margin: 0;
-    /* background-image: url('./background.jpg');
-    background-repeat: no-repeat;
-    background-size: 100% 100%; */
     background-color: #74959A;
     font-family: 'Lato', sans-serif;
     font-family: 'Open Sans', sans-serif;
@@ -20,7 +17,7 @@ body{
     font-size: 5vh;
     text-align: center;
     color:white;
-    margin-bottom: 5vh;
+    margin-bottom: 25px;
 }
 
 .header img{
@@ -38,11 +35,20 @@ body{
 .search-field input{
     border-style: none; 
     outline: none;
-    border: 1px solid;
-    border-radius: 4px;
+    border-bottom: 3px solid;
     box-sizing: border-box;
+    background-color: inherit;
+    margin-right: 5px;
+    font-size: 3vh;
+    max-width: 50vw;
 }
 
+.search-field button{
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    font-size: 3vh;
+}
 
 .result-column{
     display: flex;
@@ -51,7 +57,7 @@ body{
 }
 
 .result-card{
-    margin-top: 5vh;
+    margin-top: 3vh;
     background-color: #98B4AA;
     height: auto;
     margin-bottom: 5vh;
@@ -61,6 +67,7 @@ body{
 }
 
 .switch {
+    margin-top: 2vh;
     position: relative;
     display: inline-block;
     width: 90px;
@@ -152,14 +159,9 @@ input:checked + .slider .F{
     border-radius: 50%;
 }
 
-@media only screen and (max-width: 600px) {
+
+@media only screen and (max-width: 768px) {
     .result-card{
-        margin-top: 5vh;
-        background-color: #98B4AA;
-        height: auto;
-        margin-bottom: 5vh;
         width: 80vw;
-        border-radius: 12px;
-        text-align: center;
     }
 }

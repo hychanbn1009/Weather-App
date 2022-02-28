@@ -8,7 +8,6 @@ async function getWeather(city,unit){
   const response = await fetch(`https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=0f4cfc1673ca8fbe1c82881b21b24159`, {mode: 'cors'})
   const tempData = await response.json().then(response=>{
     if(response.cod===200){
-    console.log(response)
     setVariable(response,unit)
     return response
     }else{
@@ -53,7 +52,9 @@ function Submit_CityName(){
 function updateUnit(){
   const city=document.getElementById('cityName').value
   const unit=document.getElementById('togBtn').checked
-  getWeather(city,unit)
+  if(city){
+    getWeather(city,unit)
+  }
 }
 
 function clear(){
@@ -64,6 +65,7 @@ function clear(){
   displayminTemp.innerHTML=''
   displayfeelTemp.innerHTML=''
   displayHumidity.innerHTML=''
+  dispalyWindSpeed.innerHTML=''
 }
 
 function display(location,maxTemp,minTemp,feelTemp,humidity,country,weather_icon,weather_description,wind_speed,unit){
